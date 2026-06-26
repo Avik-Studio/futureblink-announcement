@@ -11,7 +11,8 @@
     "info": "shopify app info",
     "generate": "shopify app generate",
     "config:link": "shopify app config link",
-    "config:use": "shopify app config use"
+    "config:use": "shopify app config use",
+    "start": "cd web && npm run serve"
   },
   "devDependencies": {
     "@shopify/cli": "^4.3.0"
