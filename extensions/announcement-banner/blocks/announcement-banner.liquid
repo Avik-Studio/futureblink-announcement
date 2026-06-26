@@ -1,0 +1,88 @@
+{%- liquid
+  assign announcement = shop.metafields.my_app.announcement.value | default: shop.metafields.my_app.announcement
+-%}
+
+{%- if announcement != blank -%}
+  <div
+    id="fb-announcement-banner"
+    style="
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 99999;
+      background: {{ block.settings.bg_color }};
+      color: {{ block.settings.text_color }};
+      text-align: {{ block.settings.text_align }};
+      font-size: {{ block.settings.font_size }}px;
+      padding: {{ block.settings.padding }}px 16px;
+      box-sizing: border-box;
+      line-height: 1.4;
+      display: block;
+    "
+    role="status"
+    aria-live="polite"
+  >
+    <span style="display: inline-block;">{{ announcement | escape }}</span>
+  </div>
+  <script>
+    (function() {
+      var banner = document.getElementById('fb-announcement-banner');
+      if (!banner) return;
+      var h = banner.offsetHeight;
+      document.body.style.paddingTop = (parseFloat(document.body.style.paddingTop) || 0) + h + 'px';
+    })();
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement Banner",
+  "target": "body",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Vertical padding",
+      "min": 4,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    }
+  ]
+}
+{% endschema %}

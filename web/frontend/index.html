@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Announcement Banner</title>
+    <!-- Shopify App Bridge: embeds the app in the Admin and automatically attaches
+         a session token to fetch() requests made to our backend. -->
+    <script
+      src="https://cdn.shopify.com/shopifycloud/app-bridge.js"
+      data-api-key="%SHOPIFY_API_KEY%"
+    ></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/index.jsx"></script>
+  </body>
+</html>

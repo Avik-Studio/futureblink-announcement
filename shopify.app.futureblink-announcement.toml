@@ -1,0 +1,20 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "673dc6179df9c3bc37abd48d48bc8ca5"
+application_url = "https://example.com"
+embedded = true
+name = "futureblink-announcement"
+
+[webhooks]
+api_version = "2026-04"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_products,write_products,write_themes"
+
+[auth]
+redirect_urls = [ "https://example.com/api/auth", "https://example.com/api/auth/callback" ]
+
+[build]
+include_config_on_deploy = true
+automatically_update_urls_on_dev = true

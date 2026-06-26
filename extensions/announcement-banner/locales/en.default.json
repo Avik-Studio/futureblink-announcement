@@ -1,0 +1,25 @@
+{
+  "name": "Announcement Banner",
+  "settings": {
+    "bg_color": {
+      "label": "Background color"
+    },
+    "text_color": {
+      "label": "Text color"
+    },
+    "text_align": {
+      "label": "Text alignment",
+      "options": {
+        "left": "Left",
+        "center": "Center",
+        "right": "Right"
+      }
+    },
+    "font_size": {
+      "label": "Font size"
+    },
+    "padding": {
+      "label": "Vertical padding"
+    }
+  }
+}

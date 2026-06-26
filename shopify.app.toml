@@ -1,0 +1,31 @@
+# This is the fallback/template config.
+# The ACTIVE config used by `npm run dev` is shopify.app.futureblink-announcement.toml
+# (selected automatically because it was created by `shopify app config link`).
+#
+# Keep this file in sync with the active config so anyone cloning the repo
+# can run `npm run config:link` and get a working setup quickly.
+
+client_id = "673dc6179df9c3bc37abd48d48bc8ca5"
+name = "futureblink-announcement"
+handle = "futureblink-announcement"
+application_url = "https://example.com"
+embedded = true
+
+[access_scopes]
+scopes = "read_products,write_products,write_themes"
+
+[auth]
+redirect_urls = [
+  "https://example.com/api/auth",
+  "https://example.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2026-04"
+
+[pos]
+embedded = false
+
+[build]
+include_config_on_deploy = true
+automatically_update_urls_on_dev = true

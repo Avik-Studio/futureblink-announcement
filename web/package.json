@@ -1,0 +1,25 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Express backend for the FutureBlink announcement app.",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon index.js --watch ./ --ignore ./frontend",
+    "serve": "cross-env NODE_ENV=production node index.js"
+  },
+  "dependencies": {
+    "@shopify/shopify-api": "^13.0.0",
+    "@shopify/shopify-app-express": "^7.0.0",
+    "@shopify/shopify-app-session-storage-mongodb": "^6.0.0",
+    "compression": "^1.7.4",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "express": "^5.0.0",
+    "mongoose": "^8.5.0",
+    "serve-static": "^1.15.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
